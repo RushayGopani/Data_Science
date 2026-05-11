@@ -1,0 +1,18 @@
+Dataset,Field,Data_Type,Source_Table,Description,Nullable,Allowed_Values,Units,Notes
+DS1_baseline_stats_model.csv,Region,string,APMS 2014 Table 14.2,Government Office Region (England). Mapped from former Strategic Health Authorities.,No,9 England regions,N/A,APMS used SHAs; data mapped to GORs for compatibility with NHS Digital Bulletin 2024-25.
+DS1_baseline_stats_model.csv,Sample_N,integer,APMS 2014 Table 14.2,Unweighted survey respondent count for the region.,No,>0,Respondents,"APMS 2014 England total n=13,319 screened; n=7,546 full interview."
+DS1_baseline_stats_model.csv,CMD_Prev_Pct,float,APMS 2014 Table 2.1,% of adults with CIS-R score ≥12 (CMD clinical threshold).,No,0.0–100.0,%,"National figure: 15.7% all adults, 12.2% men, 19.1% women (APMS 2014)."
+DS1_baseline_stats_model.csv,CI_Lower_95,float,Derived,95% Wilson score CI lower bound on CMD_Prev_Pct.,No,0.0–100.0,%,Wilson interval preferred over normal approx for small samples.
+DS1_baseline_stats_model.csv,CI_Upper_95,float,Derived,95% Wilson score CI upper bound on CMD_Prev_Pct.,No,0.0–100.0,%,Wilson interval preferred over normal approx for small samples.
+DS1_baseline_stats_model.csv,Gender_Gap_Pct,float,APMS 2014 Table 2.1,Difference in CMD prevalence: Women% − Men% for that region.,No,>0 (women consistently higher),percentage points,National gender gap: 6.9pp. Individual regions vary 6–8pp.
+DS2_hypothesis_test_results.csv,Test,string,Derived,Unique test identifier and name.,No,H01–H05,N/A,
+DS2_hypothesis_test_results.csv,Chi2_stat,float,Derived,Chi-square or t test statistic value.,Yes,≥0 (chi2); any real (t),N/A,Null for t-test rows; t_stat column used instead.
+DS2_hypothesis_test_results.csv,p_value,float,Derived,Two-tailed p-value for the hypothesis test.,No,0.0–1.0,N/A,Significance threshold α=0.05 throughout. All 5 tests: p<0.05.
+DS3_distribution_analysis.csv,Age_Band,categorical,APMS 2014 Table 2.1,Age group of respondents per NHS APMS standard bands.,No,"16-24, 25-34, 35-44, 45-54, 55-64, 65-74, 75+",N/A,Age bands follow APMS 2014 / NHS standard groupings.
+DS3_distribution_analysis.csv,Gender,categorical,APMS 2014 Table 2.1,Gender category as recorded in APMS 2014.,No,"Men, Women, All",N/A,APMS 2014 collected binary gender. Non-binary not separately reported in published tables.
+DS3_distribution_analysis.csv,Pct_0-5,float,APMS 2014 Table 2.1,% of respondents with CIS-R score in band 0–5 (minimal/no symptoms).,No,0–100,%,CIS-R 0-5 = no clinically significant symptoms.
+DS3_distribution_analysis.csv,Pct_6-11,float,APMS 2014 Table 2.1,% of respondents with CIS-R score in band 6–11 (subthreshold symptoms).,No,0–100,%,CIS-R 6-11 = subthreshold; below clinical CMD threshold.
+DS3_distribution_analysis.csv,Pct_12-17,float,APMS 2014 Table 2.1,% of respondents with CIS-R score in band 12–17 (moderate CMD).,No,0–100,%,CIS-R ≥12 = clinical CMD threshold. Likely to benefit from intervention.
+DS3_distribution_analysis.csv,Pct_18+,float,APMS 2014 Table 2.1,% with CIS-R ≥18 (severe CMD symptoms).,No,0–100,%,CIS-R ≥18 = severe symptoms; almost certainly benefit from treatment.
+DS3_distribution_analysis.csv,Est_Mean_CIS-R,float,Derived from Table 2.1,Estimated mean CIS-R score using band midpoint weighting.,No,2.5–22.0,CIS-R score points,"Approximation using midpoints [2.5, 8.5, 14.5, 22.0]. Not a direct measurement."
+DS3_normality_tests.csv,Shapiro-Wilk_W,float,Derived,Shapiro-Wilk W statistic for normality test.,No,0–1,N/A,W close to 1.0 = more normal. All segments: W<0.85 — not normally distributed.
