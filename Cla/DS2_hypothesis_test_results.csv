@@ -1,6 +1,0 @@
-Test,H0,Chi2_stat,df,p_value,Decision,Significant_a0.05,Men_mean,Men_SD,Women_mean,Women_SD,t_stat
-H01: Gender × CMD,Gender is independent of CMD prevalence,62.924,1,0.0,Reject H₀,✓ Significant,,,,,
-H02: Age group × CMD,Age group is independent of CMD prevalence,88.597,6,0.0,Reject H₀,✓ Significant,,,,,
-H03: Gender × Suicidal thoughts,Gender is independent of suicidal thoughts (lifetime),14.726,1,0.00012,Reject H₀,✓ Significant,,,,,
-H04: Age group × PTSD,Age group is independent of PTSD screen-positive status,86.872,6,0.0,Reject H₀,✓ Significant,,,,,
-H05: Gender × Mean CIS-R Score (Welch t-test),Mean CIS-R score is equal for men and women,,7142,0.0,Reject H₀,✓ Significant,5.28,5.476,6.571,6.352,-9.4133
